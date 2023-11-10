@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <% const isCarExist = Boolean(cars.length) %> <% if(!isCarExist){ %>
+      <h2>No Car Found</h2>
+      <% }else { %> <% cars.map(({brand, type, year})=> { %> <% const text =
+      `${brand} - ${type} - ${year}` %>
+      <p><%= text %></p>
+      <% }) %> <% } %>
+    </div>
+  </body>
+</html>
