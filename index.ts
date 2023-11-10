@@ -1,12 +1,10 @@
 import express, { Express } from "express";
-
 import carRouter from "./src/routes/carRouter";
 import knex from "knex";
 import { Model } from "objection";
+import handleLogger from "./src/middleware/handlerLogger";
 
-const handleLogger = require("./src/middleware/handlerLogger");
 const app: Express = express();
-const PORT: number = 3000;
 
 const knexInstance = knex({
   client: "pg",
@@ -16,6 +14,7 @@ const knexInstance = knex({
     password: "mysecretpassword",
   },
 });
+const PORT: number = 3000;
 
 Model.knex(knexInstance);
 
@@ -23,7 +22,7 @@ app.set("view engine", "ejs");
 
 app.set("views", "./src/views");
 app.use(express.static("public"));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(handleLogger);
 
 app.use("/v1/cars", carRouter);

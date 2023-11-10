@@ -9,19 +9,19 @@ const cars: CarList[] = [
   {
     id: 1,
     type: "small",
-    brand: "Avanza",
+    brand: "Ioniq5",
     year: 2022,
   },
   {
     id: 2,
     type: "medium",
-    brand: "Veloz",
+    brand: "Mazda",
     year: 2022,
   },
   {
     id: 3,
-    type: "large",
-    brand: "Hyundai",
+    type: "medium",
+    brand: "Suzuki",
     year: 2022,
   },
 ];
